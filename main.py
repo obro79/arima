@@ -5,7 +5,7 @@ from evaluate import evaluate_model
 from save_load_data import save_model, load_model
 from trading_signals import generate_signals 
 import matplotlib.pyplot as plt
-from backtest import backtest_strategy, buy_and_hold_strategy
+from backtest import backtest_strategy, buy_and_hold_strategy, backtest_with_metrics
 
 ## source venv
 # Set the stock symbol and date range
@@ -41,6 +41,8 @@ signals = generate_signals(y, y_pred, threshold=0.02)  # Use 2% threshold for si
 
 # Step 9: Backtest the strategy
 final_balance, total_return = backtest_strategy(signals)
+
+print(backtest_with_metrics(signals))
 
 plt.figure(figsize=(10, 6))
 plt.plot(signals.index, signals['Actual'], label='Actual Price')
