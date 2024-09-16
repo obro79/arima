@@ -1,11 +1,8 @@
-from data_preparation import download_stock_data, load_stock_data
-from feature_engineering import create_features
+from data_preparation import download_stock_data, load_stock_data, create_features
 from train_model import train_xgboost_model
-from evaluate import evaluate_model
 from save_load_data import save_model, load_model
-from trading_signals import generate_signals 
 import matplotlib.pyplot as plt
-from backtest import backtest_strategy, buy_and_hold_strategy, backtest_with_metrics
+from backtest import backtest_strategy, buy_and_hold_strategy, backtest_with_metrics, generate_signals, evaluate_model , plot_with_signals 
 
 ## source venv
 # Set the stock symbol and date range
